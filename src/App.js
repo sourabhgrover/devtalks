@@ -7,6 +7,7 @@ import GridItem from "./components/GridItem/GridItem";
 import Navigation from "./components/Navigation/Navigation";
 
 function App() {
+
   const [pastEvents, setPastEvents] = useState([]);
   const [events, setEvents] = useState([]);
   useEffect(() => {
@@ -36,14 +37,14 @@ function App() {
           </div>
           <Section>
             <h4>Past Events</h4>
-            {pastEvents.length > 0 && pastEvents.map((e) => (
-                <List key={e.id} title={e.title} description={`"on ${e.date} by ${e.speaker}`} />
+            {pastEvents.length > 0 && pastEvents.map((e, i) => (
+              <List key={i} title={e.title} description={`on ${e.date} by ${e.speaker}`} />
             ))}
           </Section>
           <Section>
             <h4>Upcoming Events</h4>
-            {events.length > 0 && events.map((e) => (
-                <List key={e.id} title={e.title} description={`"on ${e.date} by ${e.speaker}`} />
+            {events.length > 0 && events.map((e, i) => (
+              <List key={i} title={e.title} description={`on ${e.date} by ${e.speaker}`} />
             ))}
           </Section>
           <Section>
